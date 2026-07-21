@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ✨ | A Magical Surprise</title>
+<meta name="description" content="A premium, magical birthday surprise website — messages, memories, a cake to blow out, and a final gift, made with love.">
+<meta name="theme-color" content="#7b2ff7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== CUSTOM CURSOR ===================== -->
+<div class="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"></div>
+
+<!-- ===================== SCROLL PROGRESS BAR ===================== -->
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="scrollProgressBar"></div></div>
+
+<!-- ===================== LOADING SCREEN ===================== -->
+<div class="loader" id="loader" role="status" aria-label="Loading">
+  <div class="loader-inner">
+    <div class="loader-heart">💗</div>
+    <p class="loader-text">Wrapping up your surprise<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
+  </div>
+</div>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="site-nav" id="siteNav" aria-label="Section navigation">
+  <div class="nav-brand">✨ For You</div>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#hero" data-nav>Home</a></li>
+    <li><a href="#gallery" data-nav>Memories</a></li>
+    <li><a href="#timeline" data-nav>Timeline</a></li>
+    <li><a href="#reasons" data-nav>Why You</a></li>
+    <li><a href="#cake" data-nav>Cake</a></li>
+    <li><a href="#wishes" data-nav>Wishes</a></li>
+    <li><a href="#finale" data-nav>Gift</a></li>
+  </ul>
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode">
+    <span id="themeIcon">🌙</span>
+  </button>
+</nav>
+
+<!-- ===================== HERO / LANDING SCREEN ===================== -->
+<header class="hero" id="hero">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-decor" aria-hidden="true">
+    <span class="balloon balloon-1">🎈</span>
+    <span class="balloon balloon-2">🎈</span>
+    <span class="balloon balloon-3">🎈</span>
+    <span class="balloon balloon-4">🎈</span>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">✨ A little something made just for ✨</p>
+    <h1 class="hero-title">
+      <span class="hero-title-line">Happy Birthday</span>
+      <span class="hero-title-name" id="birthdayName">[Birthday Person Name]</span>
+    </h1>
+    <p class="hero-subtitle">Today is all about you <span class="heart-pulse">❤️</span></p>
+    <button class="open-btn" id="openSurpriseBtn">
+      <span class="open-btn-glow"></span>
+      <span class="open-btn-label">🎁 Open Surprise</span>
+    </button>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>scroll</span>
+    <div class="scroll-hint-line"></div>
+  </div>
+</header>
+
+<!-- ===================== MAIN SURPRISE CONTENT ===================== -->
+<main id="mainContent" class="main-content" hidden>
+
+  <!-- ===== SECTION 1: BIRTHDAY MESSAGE ===== -->
+  <section class="section message-section reveal" id="message">
+    <div class="glass-card message-card">
+      <span class="section-icon">💌</span>
+      <h2 class="section-title">A Little Message For You</h2>
+      <p class="typewriter" id="typewriterText" aria-live="polite"></p>
+      <span class="typewriter-cursor" aria-hidden="true">|</span>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2: MEMORY GALLERY ===== -->
+  <section class="section gallery-section reveal" id="gallery">
+    <h2 class="section-title center">📸 Memory Gallery</h2>
+    <p class="section-subtitle center">Little moments, forever treasured</p>
+    <div class="gallery-grid">
+      <figure class="gallery-item reveal-stagger"><img src="https://placehold.co/500x500/f7c6d9/7b2ff7?text=Memory+1" alt="A cherished memory together, placeholder 1" loading="lazy"><figcaption>That perfect day ☀️</figcaption></figure>
+      <figure class="gallery-item reveal-stagger"><img src="https://placehold.co/500x600/e9d5ff/be185d?text=Memory+2" alt="A cherished memory together, placeholder 2" loading="lazy"><figcaption>Laughing till it hurt 😂</figcaption></figure>
+      <figure class="gallery-item reveal-stagger"><img src="https://placehold.co/500x500/fde68a/7b2ff7?text=Memory+3" alt="A cherished memory together, placeholder 3" loading="lazy"><figcaption>Golden hour magic ✨</figcaption></figure>
+      <figure class="gallery-item reveal-stagger"><img src="https://placehold.co/500x650/f7c6d9/be185d?text=Memory+4" alt="A cherished memory together, placeholder 4" loading="lazy"><figcaption>Our little tradition 🎉</figcaption></figure>
+      <figure class="gallery-item reveal-stagger"><img src="https://placehold.co/500x500/e9d5ff/7b2ff7?text=Memory+5" alt="A cherished memory together, placeholder 5" loading="lazy"><figcaption>Just us, being us 💫</figcaption></figure>
+      <figure class="gallery-item reveal-stagger"><img src="https://placehold.co/500x600/fde68a/be185d?text=Memory+6" alt="A cherished memory together, placeholder 6" loading="lazy"><figcaption>A memory to keep 🤍</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+    <img src="" alt="" id="lightboxImg" class="lightbox-img">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+  </div>
+
+  <!-- ===== SECTION 3: SPECIAL MOMENTS TIMELINE ===== -->
+  <section class="section timeline-section reveal" id="timeline">
+    <h2 class="section-title center">🕰️ Special Moments</h2>
+    <p class="section-subtitle center">Every chapter that led us here</p>
+    <div class="timeline">
+      <!-- Editable: change data-date and text for each memory -->
+      <div class="timeline-item reveal-stagger">
+        <div class="timeline-icon">🌟</div>
+        <div class="glass-card timeline-content">
+          <span class="timeline-date">The Beginning</span>
+          <p>The day our story quietly began — nobody knew yet how special it would become.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal-stagger">
+        <div class="timeline-icon">😂</div>
+        <div class="glass-card timeline-content">
+          <span class="timeline-date">First Laugh Together</span>
+          <p>The first time we laughed so hard nothing else in the world mattered.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal-stagger">
+        <div class="timeline-icon">🌍</div>
+        <div class="glass-card timeline-content">
+          <span class="timeline-date">An Adventure</span>
+          <p>The trip that turned into one of our favorite memories ever.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal-stagger">
+        <div class="timeline-icon">🎂</div>
+        <div class="glass-card timeline-content">
+          <span class="timeline-date">Today</span>
+          <p>Celebrating you — exactly as wonderful as you've always been.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4: REASONS WHY YOU ARE SPECIAL ===== -->
+  <section class="section reasons-section reveal" id="reasons">
+    <h2 class="section-title center">💖 Reasons Why You're Special</h2>
+    <p class="section-subtitle center">Just a few of the countless reasons</p>
+    <div class="reasons-grid">
+      <div class="glass-card reason-card reveal-stagger"><span class="reason-heart">💗</span><h3>Your Smile</h3><p>It lights up every room and every one of my days.</p></div>
+      <div class="glass-card reason-card reveal-stagger"><span class="reason-heart">💗</span><h3>Your Kindness</h3><p>You make everyone around you feel seen and loved.</p></div>
+      <div class="glass-card reason-card reveal-stagger"><span class="reason-heart">💗</span><h3>Your Strength</h3><p>The quiet way you handle everything life throws at you.</p></div>
+      <div class="glass-card reason-card reveal-stagger"><span class="reason-heart">💗</span><h3>Your Laugh</h3><p>Genuinely one of my favorite sounds in the world.</p></div>
+      <div class="glass-card reason-card reveal-stagger"><span class="reason-heart">💗</span><h3>Your Heart</h3><p>So generous, so full, so completely yours.</p></div>
+      <div class="glass-card reason-card reveal-stagger"><span class="reason-heart">💗</span><h3>Just You</h3><p>Simply, wonderfully, irreplaceably you.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 5: MUSIC PLAYER ===== -->
+  <section class="section music-section reveal" id="music">
+    <div class="glass-card music-card">
+      <span class="section-icon">🎵</span>
+      <h2 class="section-title">A Little Soundtrack</h2>
+      <p class="section-subtitle">Press play to set the mood</p>
+      <div class="music-player">
+        <button class="music-play-btn" id="musicPlayBtn" aria-label="Play music">
+          <span id="musicPlayIcon">▶</span>
+        </button>
+        <div class="music-info">
+          <div class="music-bars" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="music-title">Birthday Melody</span>
+        </div>
+        <div class="volume-control">
+          <span aria-hidden="true">🔉</span>
+          <input type="range" id="volumeSlider" min="0" max="100" value="60" aria-label="Volume">
+        </div>
+      </div>
+      <!-- Replace src with your own birthday tune -->
+      <audio id="bgMusic" loop preload="none">
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8e70c5f95.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 5b: VOICE NOTE ===== -->
+  <section class="section music-section reveal" id="voicenote">
+    <div class="glass-card music-card">
+      <span class="section-icon">🎙️</span>
+      <h2 class="section-title">A Voice Note For You</h2>
+      <p class="section-subtitle">Press play to hear it from me</p>
+      <div class="music-player">
+        <button class="music-play-btn" id="voiceNotePlayBtn" aria-label="Play voice note">
+          <span id="voiceNotePlayIcon">▶</span>
+        </button>
+        <div class="music-info">
+          <div class="music-bars" id="voiceNoteBars" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <span class="music-title">For Motu 🫠❤️</span>
+        </div>
+      </div>
+      <audio id="voiceNoteAudio" preload="none">
+        <source src="voicenote.wav" type="audio/wav">
+      </audio>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 6: CAKE CELEBRATION ===== -->
+  <section class="section cake-section reveal" id="cake">
+    <h2 class="section-title center">🎂 Make a Wish</h2>
+    <p class="section-subtitle center">Blow out the candles and let the magic happen</p>
+
+    <div class="cake-wrap">
+      <div class="cake" id="cakeEl">
+        <div class="candle-row">
+          <div class="candle"><div class="flame"></div></div>
+          <div class="candle"><div class="flame"></div></div>
+          <div class="candle"><div class="flame"></div></div>
+        </div>
+        <div class="cake-tier cake-tier-top"><div class="frosting-drip"></div></div>
+        <div class="cake-tier cake-tier-bottom"><div class="frosting-drip"></div></div>
+        <div class="cake-plate"></div>
+      </div>
+    </div>
+    <button class="blow-btn" id="blowBtn">🕯️ Blow the Candles</button>
+    <audio id="cakeSound" preload="none">
+      <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_bb630cc098.mp3" type="audio/mpeg">
+    </audio>
+  </section>
+
+  <!-- ===== SECTION 7: WISH COUNTER ===== -->
+  <section class="section wishes-section reveal" id="wishes">
+    <div class="glass-card wishes-card">
+      <span class="section-icon">🌠</span>
+      <h2 class="section-title">Leave a Birthday Wish</h2>
+      <p class="section-subtitle">Add your own message to the wall</p>
+      <form id="wishForm" class="wish-form">
+        <label for="wishInput" class="sr-only">Your birthday wish</label>
+        <input type="text" id="wishInput" placeholder="Write your wish here..." maxlength="120" required>
+        <button type="submit" class="wish-submit-btn">Send 💗</button>
+      </form>
+      <div class="wish-list" id="wishList" aria-live="polite"></div>
+      <div class="like-counter">
+        <button class="like-btn" id="likeBtn" aria-label="Send a like">❤️</button>
+        <span id="likeCount">0</span> people sending love
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 8: COUNTDOWN ===== -->
+  <section class="section countdown-section reveal" id="countdown">
+    <h2 class="section-title center">⏳ Countdown to the Big Day</h2>
+    <p class="section-subtitle center" id="countdownSubtitle">Set the date below and watch the magic count down</p>
+    <div class="countdown-timer" id="countdownTimer">
+      <div class="timer-box"><span class="timer-num" id="cdDays">00</span><span class="timer-label">Days</span></div>
+      <div class="timer-box"><span class="timer-num" id="cdHours">00</span><span class="timer-label">Hours</span></div>
+      <div class="timer-box"><span class="timer-num" id="cdMins">00</span><span class="timer-label">Minutes</span></div>
+      <div class="timer-box"><span class="timer-num" id="cdSecs">00</span><span class="timer-label">Seconds</span></div>
+    </div>
+    <div class="countdown-config">
+      <label for="birthdayDate">🎯 Set birthday date:</label>
+      <input type="date" id="birthdayDate">
+    </div>
+  </section>
+
+  <!-- ===== SECTION 9: FLOATING LOVE NOTES ===== -->
+  <section class="section notes-section reveal" id="notes" aria-hidden="true">
+    <div class="floating-notes-stage" id="floatingNotesStage"></div>
+  </section>
+
+  <!-- ===== SECTION 10: FINAL SURPRISE ===== -->
+  <section class="section finale-section" id="finale">
+    <canvas id="fireworksCanvas" aria-hidden="true"></canvas>
+    <div class="finale-balloons" aria-hidden="true">
+      <span>🎈</span><span>🎈</span><span>🎈</span><span>🎈</span><span>🎈</span>
+    </div>
+
+    <div class="finale-content" id="finaleContent">
+      <h2 class="section-title center">One Last Surprise…</h2>
+      <div class="gift-box" id="giftBox">
+        <div class="gift-lid">🎀</div>
+        <div class="gift-body">🎁</div>
+      </div>
+      <button class="gift-btn" id="giftBtn">Open Your Gift</button>
+    </div>
+
+    <div class="finale-message" id="finaleMessage" hidden>
+      <p class="finale-text">Happiest Birthday <span class="script">My Love</span> ❤️</p>
+      <p class="finale-sub">May this year bring you everything your heart is quietly hoping for.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FLOATING MUSIC BUTTON ===================== -->
+<button class="floating-music-btn" id="floatingMusicBtn" aria-label="Toggle music" hidden>
+  <span id="floatingMusicIcon">🎵</span>
+</button>
+
+<!-- ===================== BACK TO TOP ===================== -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top" hidden>↑</button>
+
+<!-- ===================== CONFETTI CANVAS (global) ===================== -->
+<canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
